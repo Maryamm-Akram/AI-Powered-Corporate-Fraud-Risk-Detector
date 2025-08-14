@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Fraud Risk Detector</title>
+    <style>
+        body { font-family: Arial; background-color: #101820FF; color: white; text-align: center; }
+        input, button { padding: 10px; margin: 10px; width: 300px; }
+        .result { margin-top: 20px; font-size: 24px; color: #00FF00; }
+        button { background: #00aaff; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h2>🔍 AI Fraud Risk Detector</h2>
+    <form action="/predict" method="post">
+        <input type="text" name="eps" placeholder="EPS Growth" required><br>
+        <input type="text" name="debt" placeholder="Debt Ratio" required><br>
+        <input type="text" name="vol" placeholder="Volume Spike" required><br>
+        <input type="text" name="ceo" placeholder="CEO Sentiment" required><br>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+    <div class="result">Prediction: {{ prediction }}</div>
+    {% endif %}
+</body>
+</html>
